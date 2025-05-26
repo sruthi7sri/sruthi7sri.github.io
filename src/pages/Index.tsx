@@ -323,7 +323,7 @@ const Index = () => {
           <div className="max-w-4xl mx-auto">
             <Card className="bg-white/10 backdrop-blur-md border-white/20 text-white">
               <CardHeader className="text-center">
-                <CardTitle className="text-3xl">Sruthi Sri</CardTitle>
+                <CardTitle className="text-3xl">Sruthisri Venkateswaran</CardTitle>
                 <CardDescription className="text-xl text-purple-300">
                   Data Scientist • ML Engineer • Software Engineer • Data Analyst
                 </CardDescription>

@@ -187,7 +187,10 @@ const Index = () => {
                   </div>
                   <div className="flex items-center space-x-3">
                     <Mail className="w-5 h-5 text-purple-400" />
-                    <span>sruthi7sri@gmail.com</span>
+                    <a href="mailto:sruthi7sri@gmail.com" className="hover:text-purple-300 transition-colors">
+                      sruthi7sri@gmail.com
+                    </a>
+                    {/* <span>sruthi7sri@gmail.com</span> */}
                   </div>
                   {/* <div className="flex items-center space-x-3">
                     <Phone className="w-5 h-5 text-purple-400" />
@@ -516,7 +519,10 @@ const Index = () => {
                       <Mail className="text-purple-400 w-5 h-5" />
                       <div>
                         <p className="text-sm font-semibold">Email</p>
-                        <p className="text-sm text-white/70">sruthi7sri@email.com</p>
+                        <a href="mailto:sruthi7sri@gmail.com" className="text-sm text-white/70 hover:text-purple-300">
+                          sruthi7sri@gmail.com
+                        </a>
+                        {/* <p className="text-sm text-white/70">sruthi7sri@gmail.com</p> */}
                       </div>
                     </div>
                     {/* <div className="flex items-center space-x-4">
@@ -549,7 +555,7 @@ const Index = () => {
                         LinkedIn Profile
                       </Button>
                     </a>
-                    <a href="mailto:sruthi7sri@email.com">
+                    <a href="mailto:sruthi7sri@gmail.com">
                       <Button className="w-full bg-purple-600 hover:bg-purple-700">
                         <Mail className="w-4 h-4 mr-2" />
                         Send Email
@@ -577,3 +583,4 @@ const Index = () => {
 };
 
 export default Index;
+

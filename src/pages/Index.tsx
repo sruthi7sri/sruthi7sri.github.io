@@ -15,27 +15,77 @@ const Index = () => {
   const skills = [
     {
       category: "Programming Languages",
-      items: ["Python", "SQL", "JavaScript", "Java", "C++"]
+      items: ["Python", "SQL", "JavaScript", "R", "SAS"]
     },
     {
       category: "AI & Machine Learning",
-      items: ["Data Cleaning", "Exploratory Data Analysis", "Model Evaluation", "scikit-learn", "TensorFlow", "PyTorch", "Deep Learning"]
+      items: [
+        "Machine Learning",
+        "Deep Learning",
+        "Computer Vision (CNNs, YOLO, Vision Transformer)",
+        "NLP (Transformers, BERT, T5, BART)",
+        "Reinforcement Learning",
+        "scikit-learn",
+        "TensorFlow",
+        "PyTorch",
+        "OpenCV"
+      ]
     },
     {
       category: "Data Science & Analytics",
-      items: ["Pandas", "NumPy", "Seaborn", "Matplotlib", "Tableau", "Power BI", "Excel", "Data-driven Insights"]
+      items: [
+        "Pandas",
+        "NumPy",
+        "Matplotlib",
+        "Seaborn",
+        "Tableau",
+        "Power BI",
+        "Grafana",
+        "Prometheus"
+      ]
     },
     {
       category: "Data Engineering & Cloud",
-      items: ["PySpark", "Spark", "Hadoop", "AWS", "GCP", "Azure", "Data Modeling"]
+      items: [
+        "PySpark",
+        "Spark Streaming",
+        "Hadoop",
+        "Airflow",
+        "Kafka",
+        "Snowflake",
+        "dbt",
+        "AWS (S3, EMR, Glue, Redshift)",
+        "GCP (BigQuery, Dataflow)",
+        "Docker",
+        "Kubernetes",
+        "CI/CD"
+      ]
     },
     {
-      category: "Development Tools",
-      items: ["React Native", "Streamlit", "MySQL", "MongoDB", "HTML", "CSS", "Git", "GitHub", "Full Stack Development", "System Design", "DevOps"]
+      category: "Development Tools & Databases",
+      items: [
+        "React Native",
+        "Streamlit",
+        "FastAPI",
+        "MySQL",
+        "Oracle",
+        "PostgreSQL",
+        "SAP HANA",
+        "MongoDB",
+        "Git",
+        "GitHub"
+      ]
     },
     {
       category: "Soft Skills",
-      items: ["Communication", "Collaboration", "Problem-solving", "Root-cause Analysis", "Creativity", "Leadership"]
+      items: [
+        "Collaboration",
+        "Leadership",
+        "Problem-Solving",
+        "Communication",
+        "Creativity",
+        "Root-Cause Analysis"
+      ]
     }
   ];
 
@@ -72,11 +122,18 @@ const Index = () => {
       tech: ["PyTorch", "CNN", "Pandas", "Scikit-learn", "Streamlit", "OCTMNIST"]
     },
     {
-      name: "Data Pipeline Automation Tool",
-      description: "Health Risk & OCR Dual ML System combines a Pima Diabetes Risk Predictor using traditional ML models with a CNN-based OCR engine for character recognition. This project showcases practical AI in healthcare and document processing, demonstrating skills in supervised learning, computer vision, and end-to-end model development.",
-      github: "https://sruthi7sri.github.io/Dual-ML-Application-Pima-Diabetes-Risk-Predictor-And-OCR-Engine/",
-      tech: ["Scikit-learn", "TensorFlow", "Keras", "Python", "OCR"]
-    },
+      name: "NSCLC Flatiron-Style Real-World Data Project",
+      description: "This project simulates a Flatiron Health-style real-world oncology data pipeline focused on non-small cell lung cancer (NSCLC) patients receiving first-line immunotherapy. It demonstrates data ingestion, cleaning, cohort building, survival analysis, and reporting using Python, R, and SAS.",
+      github: "https://github.com/sruthi7sri/nsclc-flatiron-project",
+      // live: "https://telco-customer-churn-analysis-prediction-sruthi7sri.streamlit.app/",
+      tech: [ "Python", "R", "dplyr", "survival", "survminer", "SAS", "Kaplan-Meier Survival Analysis", "Log-Rank Test"]
+    }
+    // {
+    //   name: "Data Pipeline Automation Tool",
+    //   description: "Health Risk & OCR Dual ML System combines a Pima Diabetes Risk Predictor using traditional ML models with a CNN-based OCR engine for character recognition. This project showcases practical AI in healthcare and document processing, demonstrating skills in supervised learning, computer vision, and end-to-end model development.",
+    //   github: "https://sruthi7sri.github.io/Dual-ML-Application-Pima-Diabetes-Risk-Predictor-And-OCR-Engine/",
+    //   tech: ["Scikit-learn", "TensorFlow", "Keras", "Python", "OCR"]
+    // },
     // {
     //   name: "Multi Dataset ML Pipeline",
     //   description: "Multi-Dataset ML Pipeline is a scalable Python project automating the full ML lifecycle across four datasets using scikit-learn Pipelines. It supports both classification and regression tasks, with cross-validated models, serialized outputs, and a live GitHub Pages site showcasing results and code for easy stakeholder access.",
@@ -167,10 +224,13 @@ const Index = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-white/90 leading-relaxed">
-                    I'm a results-driven Computer Science graduate with a strong foundation in machine learning, data engineering, software development, and analytics. My academic and industry experiences have shaped me into a versatile professional capable of solving real-world problems across domains. From developing ML pipelines and predictive models to designing interactive dashboards and mobile applications, I strive to combine technical depth with user-centric design. My toolset includes Python, PySpark, SQL, React Native, Tableau, and cloud platforms like AWS and GCP.
+                    I’m a versatile and impact-driven Computer Science Master’s student at the University at Buffalo, passionate about building scalable software, intelligent systems, and data-driven solutions that solve real-world problems. My experience spans enterprise, research, and startup settings, where I’ve designed full-stack applications, engineered large-scale data pipelines, and deployed machine learning and deep learning models (CV, NLP, RL) into production with 85–90%+ accuracy.
                   </p>
                   <p className="text-white/90 leading-relaxed">
-                    I’ve worked on diverse projects such as a CNN-based vehicle counting system, an OCR engine for postal automation, churn prediction pipelines, and a social event app that placed second at UB CSE Demo Day. Whether deploying deep learning models, automating workflows, or building end-to-end solutions, I approach every challenge with curiosity and purpose. Passionate about applying AI in practical ways, I enjoy crafting intelligent systems that are both impactful and accessible.
+                  I thrive across the full development lifecycle—from requirements gathering and model design to API integration, CI/CD deployment, and user-facing demos. Highlights include developing computer vision pipelines for smart city parking, refactoring large-scale research simulation tools for faster geospatial analysis, and delivering recommendation systems and real-time analytics at Jio Platforms that impacted millions of users.
+                  </p>
+                  <p className="text-white/90 leading-relaxed">
+                  My technical toolkit includes Python, PyTorch, TensorFlow, SQL, React Native, PySpark, Tableau, and cloud platforms like AWS and GCP. Recognized for both technical depth and collaborative problem-solving, I enjoy creating systems that are robust, efficient, and accessible. I’m now seeking opportunities in Machine Learning, Artificial Intelligence, Data Science, and Software Engineering, where I can combine technical rigor with real-world impact.
                   </p>
                 </CardContent>
               </Card>
@@ -320,7 +380,7 @@ const Index = () => {
       </section>
 
       {/* Resume Section */}
-      <section id="resume" className="py-20">
+      {/* <section id="resume" className="py-20">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-white text-center mb-16">Resume</h2>
           <div className="max-w-4xl mx-auto">
@@ -358,21 +418,6 @@ const Index = () => {
                     </li>
                   </ul>
                 </div>
-                {/* <div>
-                  <h3 className="text-xl font-bold mb-4 text-purple-300">Technical Skills</h3>
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {skills.map((group, i) => (
-                      <div key={i}>
-                        <h4 className="font-semibold text-white mb-2">{group.category}</h4>
-                        <ul className="text-sm text-white/80 list-disc list-inside space-y-1">
-                          {group.items.map((item, j) => (
-                            <li key={j}>{item}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
-                </div> */}
                 <div>
                   <h3 className="text-xl font-bold mb-4 text-purple-300">Technical Skills</h3>
                   <ul className="text-white/90 leading-relaxed space-y-2 text-sm">
@@ -412,15 +457,9 @@ const Index = () => {
                     <li><strong>Certifications:</strong> Google Digital Marketing, 30 Days of Google Cloud Challenge</li>
                   </ul>
                 </div>
-                {/* <div className="text-center">
-                  <Button className="bg-purple-600 hover:bg-purple-700">
-                    <Download className="w-4 h-4 mr-2" />
-                    Download Full Resume (PDF)
-                  </Button>
-                </div> */}
                 <div className="text-center">
                   <a
-                    href="https://drive.google.com/uc?export=download&id=1rd6gA08YHpeRkcvb2wngKkeFDF3s_m9L"
+                    href="https://drive.google.com/file/d/1tb6GPsznx5CAmlrBPzyTjGeM8UFotTnW/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -435,7 +474,170 @@ const Index = () => {
             </Card>
           </div>
         </div>
+      </section> */}
+      {/* Resume Section */}
+      <section id="resume" className="py-20">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold text-white text-center mb-16">Resume</h2>
+
+          <div className="max-w-5xl mx-auto">
+            <Card className="bg-white/10 backdrop-blur-md border-white/20 text-white">
+              <CardHeader className="text-center">
+                <CardTitle className="text-3xl">Sruthisri Venkateswaran</CardTitle>
+                <CardDescription className="text-xl text-purple-300">
+                  Software Engineer • ML Engineer • Data Engineer
+                </CardDescription>
+                <p className="text-sm text-white/70 mt-2">Open to Relocation</p>
+              </CardHeader>
+
+              <CardContent className="space-y-10">
+                {/* Summary */}
+                <div>
+                  <h3 className="text-xl font-bold mb-4 text-purple-300">Professional Summary</h3>
+                  <p className="text-white/90 leading-relaxed">
+                    Versatile and impact-focused Computer Science Master’s student at the University at Buffalo (GPA: 3.92/4.0)
+                    with professional experience building scalable software, AI solutions, and data products across enterprise and research
+                    settings. Delivered high-performance systems in cloud-native environments (AWS, GCP), optimized legacy tools
+                    reducing runtime by 30–50%, and deployed ML/DL models (CV, NLP, RL) with 85–90%+ accuracy in production-ready
+                    applications. Proven across the full lifecycle—from requirements and modeling to API integration and CI/CD deployment.
+                    Recognized for leading high-impact demos and stakeholder tools. Actively seeking full-time roles in Software Engineering,
+                    Machine Learning, or Data Engineering.
+                  </p>
+                </div>
+
+                {/* Education */}
+                <div>
+                  <h3 className="text-xl font-bold mb-4 text-purple-300">Education</h3>
+                  <ul className="text-white/80 space-y-4">
+                    <li>
+                      <strong>University at Buffalo, The State University of New York</strong> — Master of Science, Computer Science &amp; Engineering
+                      <br />
+                      <span className="text-white/70">Aug 2024 – May 2026 &nbsp;•&nbsp; GPA: 3.92/4.0</span>
+                    </li>
+                    <li>
+                      <strong>SIES Graduate School of Technology, University of Mumbai</strong> — Bachelor of Science, Computer Engineering
+                      <br />
+                      <span className="text-white/70">Aug 2019 – May 2023 &nbsp;•&nbsp; GPA: 3.81/4.0</span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Technical Skills */}
+                <div>
+                  <h3 className="text-xl font-bold mb-4 text-purple-300">Technical Skills</h3>
+                  <ul className="text-white/90 leading-relaxed space-y-2 text-sm">
+                    <li>
+                      <strong>Programming Languages:</strong> Python, SQL, JavaScript, R, SAS
+                    </li>
+                    <li>
+                      <strong>AI &amp; Machine Learning:</strong> Machine Learning, Deep Learning, Computer Vision (CNNs, YOLO, ViT),
+                      NLP (BERT, T5, BART), Reinforcement Learning, scikit-learn, TensorFlow, PyTorch, OpenCV
+                    </li>
+                    <li>
+                      <strong>Data Science &amp; Analytics:</strong> Pandas, NumPy, Matplotlib, Seaborn, Tableau, Power BI, Grafana, Prometheus
+                    </li>
+                    <li>
+                      <strong>Data Engineering &amp; Cloud:</strong> PySpark, Spark Streaming, Hadoop, Airflow, Kafka, Snowflake, dbt,
+                      AWS (S3, EMR, Glue, Redshift), GCP (BigQuery, Dataflow), Docker, Kubernetes, CI/CD
+                    </li>
+                    <li>
+                      <strong>Development Tools &amp; Databases:</strong> FastAPI, React Native, Streamlit, MySQL, PostgreSQL, Oracle,
+                      SAP HANA, MongoDB, Git, GitHub
+                    </li>
+                    <li>
+                      <strong>Soft Skills:</strong> Collaboration, Leadership, Problem-Solving, Communication, Creativity, Root-Cause Analysis
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Experience */}
+                <div>
+                  <h3 className="text-xl font-bold mb-4 text-purple-300">Experience</h3>
+                  <ul className="text-white/80 space-y-5">
+                    <li>
+                      <strong>Software Developer Student Assistant — Dept. of Civil Engineering, University at Buffalo</strong>
+                      <span className="text-white/60"> &nbsp;•&nbsp; Jul 2025 – Present &nbsp;•&nbsp; Buffalo, NY</span>
+                      <ul className="list-disc list-inside mt-1 space-y-1">
+                        <li>Refactored a complex Python simulation tool; cut code complexity by 40% and runtime by 30%.</li>
+                        <li>Re-architected I/O to CSV/NetCDF; boosted cross-platform data compatibility.</li>
+                        <li>Shipped CLI/GUI installers (macOS/Windows), reducing setup time to &lt;10 minutes.</li>
+                      </ul>
+                    </li>
+
+                    <li>
+                      <strong>Research Assistant — University at Buffalo</strong>
+                      <span className="text-white/60"> &nbsp;•&nbsp; Feb 2025 – Present &nbsp;•&nbsp; Buffalo, NY</span>
+                      <ul className="list-disc list-inside mt-1 space-y-1">
+                        <li>Built CV pipelines for parking availability; 92%+ accuracy across challenging conditions.</li>
+                        <li>YOLO training on 10k+ images; improved detection latency by 20% with CUDA acceleration.</li>
+                      </ul>
+                    </li>
+
+                    <li>
+                      <strong>Full Stack Development Intern — Qu Anytime (Qu)</strong>
+                      <span className="text-white/60"> &nbsp;•&nbsp; Jan 2025 – May 2025 &nbsp;•&nbsp; Buffalo, NY</span>
+                      <ul className="list-disc list-inside mt-1 space-y-1">
+                        <li>Built 15+ React Native UI components; reduced mobile load times by 25%.</li>
+                        <li>Integrated Google/Apple OAuth; cut onboarding drop-off by 40%; maintained Expo/EAS CI/CD.</li>
+                      </ul>
+                    </li>
+
+                    <li>
+                      <strong>Assistant Manager — Jio Platforms Limited</strong>
+                      <span className="text-white/60"> &nbsp;•&nbsp; Dec 2023 – Jul 2024 &nbsp;•&nbsp; Mumbai, India</span>
+                      <ul className="list-disc list-inside mt-1 space-y-1">
+                        <li>Processed petabyte-scale data on Databricks/Snowflake/HANA; 50% faster pipelines.</li>
+                        <li>Built recsys &amp; real-time analytics with Kafka/Confluent; +25% engagement.</li>
+                        <li>Delivered 15+ Tableau dashboards, 5+ data marts; -30% decision latency.</li>
+                      </ul>
+                    </li>
+
+                    <li>
+                      <strong>Full Stack Development Intern — National Informatics Centre (Govt. of India)</strong>
+                      <span className="text-white/60"> &nbsp;•&nbsp; Apr 2022 – Sep 2022 &nbsp;•&nbsp; Mumbai, India</span>
+                      <ul className="list-disc list-inside mt-1 space-y-1">
+                        <li>Designed REST APIs with 99.9% uptime for a role-based ticketing system (10k+ daily txns).</li>
+                        <li>Optimized MySQL stored procedures; -40% query time; 100+ Postman tests pre-deploy.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Leadership & Certifications */}
+                <div>
+                  <h3 className="text-xl font-bold mb-4 text-purple-300">Leadership & Certifications</h3>
+                  <ul className="text-white/80 space-y-2 list-disc list-inside">
+                    <li>
+                      <strong>2nd Place — UB Demo Day (2025):</strong> Full-stack mobile app; 200+ active beta testers.
+                    </li>
+                    <li>
+                      <strong>Machine Learning Specialization (Coursera):</strong> Certificate ID: TCPH79JQE9T3
+                    </li>
+                    <li>
+                      <strong>AWS Machine Learning — Associate:</strong> In progress
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Download */}
+                <div className="text-center">
+                  <a
+                    href="https://drive.google.com/file/d/1tb6GPsznx5CAmlrBPzyTjGeM8UFotTnW/view?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button className="bg-purple-600 hover:bg-purple-700">
+                      <Download className="w-4 h-4 mr-2" />
+                      Download Full Resume (PDF)
+                    </Button>
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
       </section>
+                    
 
       {/* Contact Section */}
       {/* <section id="contact" className="py-20">

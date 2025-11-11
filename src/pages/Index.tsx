@@ -1,6 +1,47 @@
 
 import React, {useState} from 'react';
-import { Github, Linkedin, Mail, Phone, MapPin, Download, ExternalLink, ArrowDown, GraduationCap, Menu, X } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone, MapPin, Download, ExternalLink, ArrowDown, GraduationCap, Menu, X, Code, Cloud, BarChart, Database } from 'lucide-react';
+import { IconType } from 'react-icons';
+import {
+  SiPython,
+  SiPytorch,
+  SiTensorflow,
+  SiReact,
+  SiGooglecloud,
+  SiDocker,
+  SiKubernetes,
+  SiPostgresql,
+  SiMysql,
+  SiMongodb,
+  SiGithub,
+  SiGit,
+  SiPandas,
+  SiNumpy,
+  SiTableau,
+  
+  SiSnowflake,
+  SiStreamlit,
+  SiFastapi
+} from 'react-icons/si';
+import {
+  SiJavascript,
+  SiR,
+  SiScikitlearn,
+  
+  SiGrafana,
+  SiPrometheus,
+  SiApachespark,
+  SiApachehadoop,
+  SiApachekafka,
+  SiApacheairflow,
+  SiDbt,
+  SiOpencv,
+  SiOracle,
+  SiJenkins,
+  SiGithubactions,
+  SiGitlab,
+  SiCircleci
+} from 'react-icons/si';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -8,11 +49,24 @@ import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const Index = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const slateTheme = {
+    navUnderline: '#64748b',
+    avatarBorder: 'rgba(148,163,184,0.2)',
+    avatarGradient: 'linear-gradient(90deg,#3b3b3b,#1f1f1f)',
+    badgeBg: 'rgba(51,65,85,0.45)',
+    badgeBorder: '#334155',
+    badgeText: '#ffffff',
+    buttonBg: '#1f2937',
+    buttonHover: '#111827',
+    linkColor: '#94a3b8',
+    cardBorder: 'rgba(255,255,255,0.06)'
+  };
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: 'smooth' });
     setIsMobileMenuOpen(false); 
   };
+  const currentTheme = slateTheme;
 
   const skills = [
     {
@@ -77,17 +131,6 @@ const Index = () => {
         "Git",
         "GitHub"
       ]
-    },
-    {
-      category: "Soft Skills",
-      items: [
-        "Collaboration",
-        "Leadership",
-        "Problem-Solving",
-        "Communication",
-        "Creativity",
-        "Root-Cause Analysis"
-      ]
     }
   ];
 
@@ -131,13 +174,81 @@ const Index = () => {
     }
   ];
 
+  // Mapping of tech name (as used in the arrays above) to an icon component.
+  // Use `any` here because we mix icons from react-icons and lucide-react.
+  const techIconMap: Record<string, any> = {
+    Python: SiPython,
+    PyTorch: SiPytorch,
+    TensorFlow: SiTensorflow,
+    React: SiReact,
+    'React Native': SiReact,
+    AWS: Cloud,
+    Amazonaws: Cloud,
+    GCP: Cloud,
+    'Google Cloud': Cloud,
+    Docker: SiDocker,
+    Kubernetes: SiKubernetes,
+    PostgreSQL: SiPostgresql,
+    Postgregres: SiPostgresql,
+    MySQL: SiMysql,
+    MongoDB: SiMongodb,
+    GitHub: SiGithub,
+    Github: SiGithub,
+    Git: SiGit,
+    Pandas: SiPandas,
+    NumPy: SiNumpy,
+    Numpy: SiNumpy,
+    Tableau: SiTableau,
+    'Power BI': BarChart,
+    Snowflake: SiSnowflake,
+    Streamlit: SiStreamlit,
+    FastAPI: SiFastapi,
+    PySpark: Code // fallback visual for PySpark
+  };
+  // Extend mappings for additional techs
+  techIconMap['SQL'] = Database;
+  techIconMap['JavaScript'] = SiJavascript;
+  techIconMap['R'] = SiR;
+  techIconMap['SAS'] = Code;
+  techIconMap['Machine Learning'] = SiPytorch; // use PyTorch icon as representative
+  techIconMap['Deep Learning'] = SiTensorflow; // use TensorFlow icon as representative
+  techIconMap['Computer Vision'] = SiOpencv;
+  techIconMap['OpenCV'] = SiOpencv;
+  techIconMap['NLP'] = SiPytorch;
+  techIconMap['Reinforcement Learning'] = SiPytorch;
+  techIconMap['scikit-learn'] = SiScikitlearn;
+  techIconMap['Scikit-learn'] = SiScikitlearn;
+  techIconMap['Matplotlib'] = BarChart;
+  techIconMap['Seaborn'] = BarChart;
+  techIconMap['Grafana'] = SiGrafana;
+  techIconMap['Prometheus'] = SiPrometheus;
+  techIconMap['Spark'] = SiApachespark;
+  techIconMap['PySpark'] = SiApachespark;
+  techIconMap['Spark Streaming'] = SiApachespark;
+  techIconMap['Hadoop'] = SiApachehadoop;
+  techIconMap['Airflow'] = SiApacheairflow;
+  techIconMap['Kafka'] = SiApachekafka;
+  techIconMap['dbt'] = SiDbt;
+  techIconMap['AWS (S3, EMR, Glue, Redshift)'] = Cloud;
+  techIconMap['GCP (BigQuery, Dataflow)'] = SiGooglecloud;
+  techIconMap['CI/CD'] = SiGithubactions;
+  techIconMap['Oracle'] = SiOracle;
+
+  const getIconForTech = (tech: string) => {
+    // normalize string by removing parenthetical details and trimming
+    const key = tech.replace(/\s*\(.+\)/, '').trim();
+    return techIconMap[key];
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+  <div className="min-h-screen bg-gradient-to-br from-black via-slate-900 to-black">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-black/20 backdrop-blur-md z-50 border-b border-white/10">
         <div className="container mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
             <button><h1 className="text-xl font-bold text-white" onClick={() => scrollToSection('home')}>Sruthisri Venkateswaran</h1></button>
+            
+            
             <div className="hidden md:flex space-x-8">
               {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item) => (
                 <button
@@ -146,7 +257,7 @@ const Index = () => {
                   className="text-white/80 hover:text-white transition-colors duration-300 relative group"
                 >
                   {item}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-400 transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full" style={{background: currentTheme.navUnderline}}></span>
                 </button>
               ))}
             </div>
@@ -181,16 +292,16 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center justify-center pt-20">
+      <section id="home" className="min-h-screen w-full flex items-center justify-center p-20">
         <div className="container mx-auto px-6 text-center">
           <div className="mb-8">
-            <Avatar className="w-48 h-48 mx-auto mb-8 border-4 border-purple-400/20">
+            <Avatar className="w-48 h-48 mx-auto mb-8 border-4" style={{borderColor: currentTheme.avatarBorder}}>
               <AvatarImage 
                 src="/profile.jpg" 
                 alt="Sruthisri" 
                 className="object-cover"
               />
-              <AvatarFallback className="bg-gradient-to-r from-purple-400 to-pink-400 text-6xl font-bold text-white">
+              <AvatarFallback style={{background: currentTheme.avatarGradient}} className="text-6xl font-bold text-white">
                 SV
               </AvatarFallback>
             </Avatar>
@@ -198,31 +309,31 @@ const Index = () => {
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in">
             Sruthisri Venkateswaran
           </h1>
-          <div className="text-xl md:text-2xl text-purple-300 mb-8 space-y-2">
+          <div className="text-xl md:text-2xl text-slate-300 mb-8 space-y-2">
             <p>Data Scientist • ML Engineer • Software Engineer • Data Analyst</p>
             <p className="text-lg text-white/70 max-w-3xl mx-auto mt-4">
               I build intelligent systems that are usable, deployable, and rooted in real-world impact.
             </p>
           </div>
-          <div className="flex justify-center space-x-6 mb-12">
+            <div className="flex justify-center space-x-6 mb-12">
             <a href="https://github.com/sruthi7sri" target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-white/10 hover:bg-white/20 text-white border border-white/20">
                 <Github className="w-5 h-5 mr-2" />
                 GitHub
               </Button>
             </a>
-            <a href="https://linkedin.com/in/sruthisri" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
+              <a href="https://linkedin.com/in/sruthisri" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
                 <Linkedin className="w-5 h-5 mr-2" />
                 LinkedIn
               </Button>
-            </a>
+              </a>
             <a
               href="https://drive.google.com/uc?export=download&id=1rd6gA08YHpeRkcvb2wngKkeFDF3s_m9L"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button size="lg" className="bg-white/10 hover:bg-white/20 text-white border border-white/20 w-full sm:w-auto">
+                <Button size="lg" className="bg-white/10 hover:bg-white/20 text-white border border-white/20 w-full sm:w-auto" style={{borderColor: currentTheme.cardBorder}}>
                 <Download className="w-5 h-5 mr-2" />
                 Download Resume
               </Button>
@@ -267,22 +378,22 @@ const Index = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="flex items-center space-x-3">
-                    <GraduationCap className="w-5 h-5 text-purple-400" />
+                    <GraduationCap className="w-5 h-5 text-slate-400" />
                     <span>Master of Science in Computer Science</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <Mail className="w-5 h-5 text-purple-400" />
-                    <a href="mailto:sruthi7sri@gmail.com" className="hover:text-purple-300 transition-colors">
+                    <Mail className="w-5 h-5 text-slate-400" />
+                    <a href="mailto:sruthi7sri@gmail.com" className="hover:text-slate-300 transition-colors">
                       sruthi7sri@gmail.com
                     </a>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <MapPin className="w-5 h-5 text-purple-400" />
+                      <MapPin className="w-5 h-5 text-slate-400" />
                     <span>Buffalo, NY</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <Github className="w-5 h-5 text-purple-400" />
-                    <a href="https://github.com/sruthi7sri" className="hover:text-purple-300 transition-colors">
+                    <Github className="w-5 h-5 text-slate-400" />
+                    <a href="https://github.com/sruthi7sri" className="hover:text-slate-300 transition-colors">
                       github.com/sruthi7sri
                     </a>
                   </div>
@@ -325,7 +436,7 @@ const Index = () => {
                 <div className="space-y-4 text-center pt-4">
                   {/* Styled Education Block */}
                   <div className="flex justify-center items-center gap-3">
-                    <GraduationCap className="w-8 h-8 text-purple-400 flex-shrink-0" />
+                    <GraduationCap className="w-8 h-8 flex-shrink-0" style={{color: currentTheme.badgeBorder}} />
                     <div className="text-left">
                       <p className="text-2xl font-semibold text-white">University at Buffalo</p>
                       <p className="text-md text-white/80">Master of Science in Computer Science</p>
@@ -333,7 +444,7 @@ const Index = () => {
                   </div>
                   
                   {/* Open to Opportunities */}
-                  <p className="text-lg text-purple-300 pt-2">
+                  <p className="text-lg text-slate-300 pt-2">
                     Open to opportunities in Data Science, ML Engineering, Software Development, and Data Analysis roles.
                   </p>
                 </div>
@@ -352,15 +463,20 @@ const Index = () => {
             {skills.map((skillGroup, index) => (
               <Card key={index} className="bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white/15 transition-all duration-300 hover:scale-105">
                 <CardHeader>
-                  <CardTitle className="text-xl text-purple-250 text-center">{skillGroup.category}</CardTitle>
+                  <CardTitle className="text-xl text-slate-200 text-center">{skillGroup.category}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-3">
-                    {skillGroup.items.map((skill, skillIndex) => (
-                      <Badge key={skillIndex} variant="secondary" className="bg-purple-600/30 text-white hover:bg-purple-600/50">
-                        {skill}
-                      </Badge>
-                    ))}
+                    {skillGroup.items.map((skill, skillIndex) => {
+                      const Icon = getIconForTech(skill);
+                      const style = { background: currentTheme.badgeBg, borderColor: currentTheme.badgeBorder, color: currentTheme.badgeText };
+                      return (
+                        <Badge key={skillIndex} variant="secondary" className="hover:opacity-95" style={style}>
+                          {Icon ? <Icon className="inline w-4 h-4 mr-2" /> : <Code className="inline w-4 h-4 mr-2" />}
+                          {skill}
+                        </Badge>
+                      );
+                    })}
                   </div>
                 </CardContent>
               </Card>
@@ -387,16 +503,21 @@ const Index = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tech.map((tech, techIndex) => (
-                      <Badge key={techIndex} variant="outline" className="border-purple-400 text-purple-300">
-                        {tech}
-                      </Badge>
-                    ))}
+                    {project.tech.map((tech, techIndex) => {
+                      const Icon = getIconForTech(tech);
+                      const style = { background: currentTheme.badgeBg, borderColor: currentTheme.badgeBorder, color: currentTheme.badgeText };
+                      return (
+                        <Badge key={techIndex} variant="outline" className="hover:opacity-95" style={style}>
+                          {Icon ? <Icon className="inline w-4 h-4 mr-2" /> : <Code className="inline w-4 h-4 mr-2" />}
+                          {tech}
+                        </Badge>
+                      );
+                    })}
                   </div>
                   <div className="flex space-x-3">
                     {project.github && (
                       <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Button size="sm" variant="outline" className="border-white/20 text-black hover:bg-white/10">
+                        <Button size="sm" variant="outline" className="border-white/20 text-white hover:bg-white/10 hover:text-black">
                           <Github className="w-4 h-4 mr-0" />
                           Code
                         </Button>
@@ -404,7 +525,7 @@ const Index = () => {
                     )}
                     {project.live && (
                       <a href={project.live} target="_blank" rel="noopener noreferrer">
-                        <Button size="sm" className="bg-purple-600 hover:bg-purple-700">
+                        <Button size="sm" className="bg-gray-800 hover:bg-gray-900">
                           <ExternalLink className="w-4 h-4 mr-2" />
                           Live Demo
                         </Button>
@@ -422,7 +543,8 @@ const Index = () => {
             href="https://github.com/sruthi7sri"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-purple-400 hover:text-purple-200 underline text-lg"
+            className="underline text-lg"
+            style={{color: currentTheme.linkColor}}
           >
             → More Projects on my GitHub
           </a>
@@ -446,7 +568,7 @@ const Index = () => {
                   {/* Contact Info */}
                   <div className="space-y-6">
                     <div className="flex items-center space-x-4">
-                      <Mail className="text-purple-400 w-5 h-5" />
+                      <Mail className="text-slate-400 w-5 h-5" />
                       <div>
                         <p className="text-sm font-semibold">Email</p>
                         <a href="mailto:sruthi7sri@gmail.com" className="text-sm text-white/70 hover:text-purple-300">
@@ -456,7 +578,7 @@ const Index = () => {
                       </div>
                     </div>
                     <div className="flex items-center space-x-4">
-                      <MapPin className="text-purple-400 w-5 h-5" />
+                      <MapPin className="text-slate-400 w-5 h-5" />
                       <div>
                         <p className="text-sm font-semibold">Location</p>
                         <p className="text-sm text-white/70">Buffalo, NY</p>
@@ -479,7 +601,7 @@ const Index = () => {
                       </Button>
                     </a>
                     <a href="mailto:sruthi7sri@gmail.com">
-                      <Button className="w-full bg-purple-600 hover:bg-purple-700">
+                      <Button className="w-full bg-gray-800 hover:bg-gray-900">
                         <Mail className="w-4 h-4 mr-2" />
                         Send Email
                       </Button>
@@ -506,4 +628,3 @@ const Index = () => {
 };
 
 export default Index;
-
